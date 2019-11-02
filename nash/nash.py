@@ -2,7 +2,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-import plot
+from .plot import plot_output
 
 #def plot_output(lis,color):
 #    x=np.linspace(1,len(lis),len(lis))
