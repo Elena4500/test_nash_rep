@@ -2,7 +2,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-from .plot import plot_output
+from nash_equilibrium_pkg.plot import plot_output
 
 #def plot_output(lis,color):
 #    x=np.linspace(1,len(lis),len(lis))
@@ -155,8 +155,8 @@ def nash_equilibrium(a):
             print("p = ", v1)
             v2 = get_vector(q_vector)
             print("q = ", v2)
-            plot.plot_output(v1,'blue')
-            plot.plot_output(v2,'red')
+            plot_output(v1,'blue')
+            plot_output(v2,'red')
 #            print(game_p,v1,v2)
             return game_p, v1, v2
         else:
