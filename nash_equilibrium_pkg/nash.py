@@ -151,7 +151,7 @@ def nash_equilibrium(a):
     game_p, v1, v2 = saddle(a)
     if game_p == None:
         res = simptab(a)
-        # print(res)
+        print(res)
         m = len(a)
         n = len(a[0])
         base_v = [int(i) for i in range(m+1,2*m+1 )]
@@ -160,16 +160,16 @@ def nash_equilibrium(a):
             str_of_minD = minD_string(res,r)#leading string
             res = changing(res,str_of_minD,r)
             base_v[str_of_minD] = r;
-            # print(res)
-        # print (res)
+            print(res)
+        print (res)
         game_p = 1/(res[-1][0])
         p_vector = second_gamer(res,game_p)
         q_vector = first_gamer(res,base_v,game_p)
-        # print("game price = ",game_p)
+        print("game price = ",game_p)
         v1 = get_vector(p_vector)
-        # print("p = ", v1)
+        print("p = ", v1)
         v2 = get_vector(q_vector)
-        # print("q = ", v2)
+        print("q = ", v2)
         plot_output(v1,'blue')
         plot_output(v2,'red')
 #            print(game_p,v1,v2)
