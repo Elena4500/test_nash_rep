@@ -7,4 +7,4 @@
 python unit_tests.py
 5. To check that package is installed correctly run:
 
-python -c 'import nash'
+python -c 'import nash_equilibrium_pkg'

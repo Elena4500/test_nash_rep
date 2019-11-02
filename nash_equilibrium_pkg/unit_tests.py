@@ -10,7 +10,7 @@ def check_matrix(game_p,v1,v2, val,vect1,vect2):
         print("Error has occured in unit test with game price")
         return False
     for i in range(0,len(v1)):
-        print(v1[i]," ",vect1[i])
+        # print(v1[i]," ",vect1[i])
         if abs(v1[i]-vect1[i])>ebs:
             print("Error has occured in unit test in checking vector 1")
             return False
@@ -82,5 +82,9 @@ def unit_test():
     print("Unit test passed succesfully")
 
 
-print(123)
-unit_test()
+if __name__ == "__main__":
+    unit_test()
+    first_test()
+    second_test()
+    third_test()
+    print("all tests passed succesfully")
