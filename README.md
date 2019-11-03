@@ -5,18 +5,18 @@
 
 2. Run 
 
-"cd test_nash_rep" 
+`cd test_nash_rep` 
 
 in bash
 
 3. To install the package run the following commmand:
 
-"pip install ."
+`pip install .`
 
 4. To run unit tests run the following command in bash:
 
-python -m unittest nash_equilibrium_pkg/unit_tests.py
+`python -m unittest nash_equilibrium_pkg/unit_tests.py`
 
 5. To check that package is installed correctly run:
 
-python -c 'import nash_equilibrium_pkg'
+`python -c 'import nash_equilibrium_pkg'`
