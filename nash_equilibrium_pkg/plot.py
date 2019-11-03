@@ -1,5 +1,10 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import matplotlib.pyplot as plt
 import numpy as np
+
+
 def plot_output(lis,color):
     x=np.linspace(1,len(lis),len(lis))
     y=lis
