@@ -12,6 +12,7 @@ def plot_output(lis,color):
     plt.ylabel('y')
     plt.title('Визуализация спектров оптимальных стратегий')
     plt.plot(x, y, marker='o', linestyle='', color=color)
+    plt.savefig("image.png")
     pass
 
 
