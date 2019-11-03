@@ -12,7 +12,7 @@ in bash
 "pip install ."
 4. To run unit tests run the following command in bash:
 
-python nash_equilibrium_pkg/unit_tests.py
+python -m unittest nash_equilibrium_pkg/unit_tests.py
 5. To check that package is installed correctly run:
 
 python -c 'import nash_equilibrium_pkg'
