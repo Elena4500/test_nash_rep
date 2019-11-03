@@ -7,15 +7,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from nash_equilibrium_pkg.plot import plot_output
 
-#def plot_output(lis,color):
-#    x=np.linspace(1,len(lis),len(lis))
-#    y=lis
-#    plt.xlabel('x')
-#    plt.ylabel('y')
-#    plt.title('Визуализация спектров оптимальных стратегий')
-#    plt.plot(x, y, marker='o', linestyle='', color=color)
-#    pass
-
 
 def minD_string(a,j):
     i = 0
@@ -65,7 +56,7 @@ def find_min_in_last_string(a):
     min = a[len(a)-1][0]
     column = 0
     for i in range (len(a[0]-1)):
-        if ((a[len(a)-1][i]) <= min): ####
+        if ((a[len(a)-1][i]) <= min): 
             min = (a[len(a)-1][i])
             column = i
     return column
@@ -115,7 +106,7 @@ def saddle(arr):
             max = b[i]
             I = i
     if max == min:
-        print("Game price: ", min, ";", "Strategies:", i," ", j)
+        print("Game price: ", min, ";", "Strategies:", I," ", J)
         return min, [I], [J]
     else:
         return None, None, None
@@ -130,8 +121,8 @@ def second_gamer(arr,a):
 
 
 def first_gamer(arr,base,a):
-    m = len(base)               #added
-    n = len(arr[0])-m-1         #real
+    m = len(base)               
+    n = len(arr[0])-m-1         
     vector = np.zeros((1,n))
     for i in range(m):
         if base[i] <= n:
@@ -151,17 +142,17 @@ def nash_equilibrium(a):
     game_p, v1, v2 = saddle(a)
     if game_p == None:
         res = simptab(a)
-        print(res)
+#        print(res)
         m = len(a)
         n = len(a[0])
         base_v = [int(i) for i in range(m+1,2*m+1 )]
         while any(res[-1, :] < 0):
-            r=find_min_in_last_string(res)  #leading column
-            str_of_minD = minD_string(res,r)#leading string
+            r=find_min_in_last_string(res)  
+            str_of_minD = minD_string(res,r)
             res = changing(res,str_of_minD,r)
             base_v[str_of_minD] = r;
-            print(res)
-        print (res)
+#            print(res)
+#        print (res)
         game_p = 1/(res[-1][0])
         p_vector = second_gamer(res,game_p)
         q_vector = first_gamer(res,base_v,game_p)
@@ -172,7 +163,6 @@ def nash_equilibrium(a):
         print("q = ", v2)
         plot_output(v1,'blue')
         plot_output(v2,'red')
-#            print(game_p,v1,v2)
         return game_p, v1, v2
     else:
         return game_p, v1, v2
